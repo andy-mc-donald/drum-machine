@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #43c59e;
 }
 
-.App-link {
-  color: #61dafb;
+#drum-machine {
+  border: 5px solid #ff4a1c;
+  background-color: #5c5c5c;
+  padding: 50px;
+  padding-top: 10px;
+  width: 500px;
+  border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#heading {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Pacifico", cursive;
+  color: #fff;
+}
+
+#display {
+  background-color: #1f1f1f;
+  border: 4px solid #ff4a1c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#text {
+  padding-left: 10px;
+  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+}
+
+#drum-pad-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.drum-pad {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  background-color: #05668d;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  outline: 0;
+}
+
+.drum-pad:hover {
+  background-color: #089dd9;
+}
+
+.drum-pad:active,
+.drum-pad.active {
+  background-color: #ff4a1c;
+}
+
+#drum-pad-text {
+  color: #fff;
+  font-family: "Anton", sans-serif;
+  font-size: 40px;
+  /* without the below a mouse-click on a drum-pad letter wouldnt trigger the audio   */
+  pointer-events: none;
+}
+
+@media (width < 768px) {
+  #drum-machine {
+    width: 280px;
+    padding: 10px;
+    padding-bottom: 30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .drum-pad {
+    width: 80px;
+    height: 80px;
+  }
+
+  #text {
+    font-size: 18px;
+  }
+
+  #drum-pad-text {
+    font-size: 20px;
   }
 }
